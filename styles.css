@@ -1,23 +1,182 @@
-/* FitCRM — Pure HTML & CSS (No JavaScript) */
-*,
-*::before,*::after{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5;color:#0f172a;background:#f8fafc}
-:root{--brand:#0ea5e9;--brand-600:#0284c7;--ink:#0f172a;--muted:#64748b;--surface:#fff;--surface-2:#f1f5f9;--danger:#ef4444;--accent:#22c55e;--radius:16px;--shadow:0 10px 20px rgba(2,8,23,.06)}
-.container{max-width:1000px;margin-inline:auto;padding:1rem}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem}.section-header{margin-bottom:1rem}.section-header h2{margin:0 0 .25rem 0;font-size:clamp(1.25rem,2vw,1.5rem)}
-.site-header{background:linear-gradient(180deg,var(--surface),var(--surface-2));border-bottom:1px solid #e2e8f0}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{font-size:clamp(1.25rem,2.4vw,1.6rem);margin:.5rem 0}.nav{list-style:none;display:flex;gap:.5rem;padding:0;margin:0}
-.nav-link{display:inline-block;padding:.5rem .75rem;border-radius:999px;text-decoration:none;color:var(--ink);border:1px solid transparent}.nav-link:hover,.nav-link:focus{background:var(--surface-2)}
-.nav-link.active{border-color:var(--brand);color:var(--brand-600);background:color-mix(in oklab,var(--brand) 10%, white)}
-.site-footer{margin-top:2rem;color:var(--muted);border-top:1px solid #e2e8f0;background:var(--surface)}.footer-inner{text-align:center;padding-block:1.25rem}.text-link{color:var(--brand-600)}
-.form-card{margin-top:1rem}.grid-form .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}.form-field{grid-column:span 6;display:grid;gap:.375rem}.form-field--full{grid-column:1 / -1}
-label{font-weight:600}.req{color:var(--danger)}input[type="text"],input[type="email"],input[type="tel"],input[type="number"],input[type="date"],input[type="search"],select{appearance:none;width:100%;padding:.625rem .75rem;border:1px solid #cbd5e1;border-radius:.75rem;background:var(--surface);font:inherit}
-input:focus,select:focus{outline:3px solid color-mix(in oklab,var(--brand) 25%,transparent);border-color:var(--brand-600)}
-input:required:invalid,select:required:invalid{border-color:var(--brand)}input:required:valid,select:required:valid{border-color:var(--accent)}
-.actions{margin-top:.5rem;display:flex;align-items:center;gap:.75rem}.btn{font:inherit;border:1px solid transparent;padding:.625rem 1rem;border-radius:999px;cursor:not-allowed}.btn-primary{background:var(--brand);color:#fff}
-.btn-ghost{background:transparent;border-color:#cbd5e1;color:var(--ink)}.btn-danger-ghost{background:transparent;border-color:#ef4444;color:#ef4444}
-.toolbar{display:flex;gap:.75rem;align-items:center;margin-bottom:.75rem}.table-wrap{overflow-x:auto;background:var(--surface);border-radius:var(--radius)}
-.table{width:100%;border-collapse:collapse;min-width:720px}.table th,.table td{text-align:left;padding:.75rem .75rem;border-bottom:1px solid #e2e8f0;vertical-align:top}
-.table tbody tr:hover{background:color-mix(in oklab,var(--brand) 6%,white)}.col-actions{width:160px}.row-actions{display:flex;gap:.5rem;flex-wrap:wrap}
-.badge{display:inline-block;padding:.25rem .5rem;border-radius:.5rem;background:color-mix(in oklab,var(--brand) 15%,white);color:var(--brand-600);font-weight:600;font-size:.85rem}
-@media (max-width:720px){.form-field{grid-column:1 / -1}.header-inner{flex-wrap:wrap}.nav{flex-wrap:wrap}}
-@media (max-width:520px){.table{min-width:0;border:0}.table thead{display:none}.table tr{display:grid;grid-template-columns:1fr;gap:.25rem;padding:.75rem;border:1px solid #e2e8f0;border-radius:.75rem;margin-bottom:.75rem}.table td{border:0;padding:0}.table td::before{content:attr(data-label) " — ";font-weight:600;color:var(--muted);display:inline}.col-actions,.row-actions{width:100%}}
+/* FitCRM — colorful, accessible theme (HTML+CSS only) */
+
+/* ---------- Reset & Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+:root{
+  /* Palette */
+  --ink:#0b1220;
+  --muted:#6b7280;
+  --bg:#f6f8fb;
+  --surface:#ffffff;
+  --brand:#2563eb;        /* Indigo */
+  --brand-700:#1e40af;
+  --accent:#06b6d4;       /* Teal */
+  --accent-700:#0e7490;
+  --highlight:#f59e0b;    /* Amber for badges */
+  --danger:#ef4444;
+  --ok:#22c55e;
+
+  --ring: 3px solid color-mix(in oklab, var(--brand) 35%, transparent);
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(14, 23, 42, .10);
+  --hair:#e5e7eb;
+}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height:1.55;
+  color:var(--ink);
+  background:
+    radial-gradient(90vw 70vh at -20% -20%, #dbeafe 0%, transparent 60%),
+    radial-gradient(80vw 70vh at 120% -10%, #ccfbf1 0%, transparent 55%),
+    var(--bg);
+}
+
+/* ---------- Containers ---------- */
+.container{max-width:1100px;margin-inline:auto;padding:24px}
+.card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:24px;
+  border:1px solid #eef2f7;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header{
+  background: linear-gradient(135deg, color-mix(in oklab, var(--brand) 18%, #fff) 0%, #fff 60%);
+  border-bottom:1px solid #e5e7eb;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{
+  margin:.5rem 0;
+  font-size:clamp(24px, 3.2vw, 32px);
+  font-weight:800;
+  letter-spacing:.3px;
+  color:var(--brand-700);
+}
+.nav{list-style:none;display:flex;gap:8px;margin:0;padding:0}
+.nav-link{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid transparent;
+  color:var(--ink);
+  background:#fff;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.nav-link:hover{border-color:#dbeafe;background:#f8fbff}
+.nav-link.active{
+  color:#fff;
+  background:linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
+  border-color:transparent;
+}
+
+/* ---------- Section headers ---------- */
+.section-header{margin:0 0 12px 0}
+.section-header h2{margin:0;font-size:clamp(20px,2.4vw,26px)}
+
+/* ---------- Footer ---------- */
+.site-footer{margin-top:28px;background:#fff;border-top:1px solid var(--hair)}
+.footer-inner{padding:16px;text-align:center;color:var(--muted)}
+.text-link{color:var(--brand-700);text-decoration:none}
+.text-link:hover{text-decoration:underline}
+
+/* ---------- Form ---------- */
+.grid-form .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.form-field{grid-column:span 6;display:grid;gap:6px}
+.form-field--full{grid-column:1 / -1}
+label{font-weight:700}
+.req{color:var(--danger)}
+
+input[type="text"],input[type="email"],input[type="tel"],
+input[type="number"],input[type="date"],input[type="search"],select{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid #d2d8e1;
+  background:#fff;
+  font:inherit;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+input:focus,select:focus{outline:var(--ring);border-color:color-mix(in oklab, var(--brand) 55%, #9aa7be)}
+/* Show validity with color but avoid harsh red */
+input:required:invalid,select:required:invalid{border-color:var(--accent)}
+input:required:valid,select:required:valid{border-color:var(--ok)}
+
+.actions{margin-top:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{
+  font:inherit;border:1px solid transparent;border-radius:999px;
+  padding:10px 16px; cursor:not-allowed;
+}
+.btn-primary{
+  cursor:not-allowed;
+  color:#fff;
+  background:linear-gradient(135deg,var(--brand) 0%, var(--accent) 100%);
+  box-shadow:0 6px 16px rgba(37, 99, 235, .25);
+}
+.hint{color:var(--muted);font-size:.95rem}
+
+/* ---------- Table ---------- */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+.table{width:100%;border-collapse:collapse;min-width:760px}
+.table th,.table td{padding:12px 14px;border-bottom:1px solid #eef2f7;text-align:left}
+.table thead th{
+  position:sticky; top:0; z-index:1;
+  background:linear-gradient(135deg, #f0f7ff, #ecfeff);
+  color:#0b1220; border-bottom:1px solid #dbeafe;
+}
+.table tbody tr:nth-child(odd){background:#fcfdff}
+.table tbody tr:hover{background:color-mix(in oklab, var(--accent) 8%, #fff)}
+.col-actions{width:180px}
+.row-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+.btn-ghost,.btn-danger-ghost{
+  padding:8px 12px;border-radius:10px;background:#fff;border:1px solid #dce3ec;
+  cursor:not-allowed;
+}
+.btn-ghost{color:var(--brand-700)}
+.btn-danger-ghost{color:#b91c1c;border-color:#fecaca;background:#fff5f5}
+
+/* badges in table */
+.badge{
+  display:inline-block;padding:4px 10px;border-radius:999px;
+  background: color-mix(in oklab, var(--highlight) 20%, #fff);
+  border:1px solid color-mix(in oklab, var(--highlight) 40%, #ffe8bb);
+  color:#7c4a00;font-weight:700;font-size:.85rem;
+}
+
+/* ---------- Toolbar / Search ---------- */
+.toolbar{display:flex;gap:10px;align-items:center;margin:10px 0 14px}
+input[type="search"]{
+  max-width:320px;background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-3.5-3.5"/></svg>') no-repeat 12px 50%;
+  padding-left:40px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px){
+  .form-field{grid-column:1 / -1}
+  .header-inner{flex-wrap:wrap}
+}
+@media (max-width: 560px){
+  /* Card-style table rows on small screens */
+  .table{min-width:0;border:0}
+  .table thead{display:none}
+  .table tr{
+    display:grid;grid-template-columns:1fr;gap:8px;
+    padding:12px;border:1px solid #e5e7eb;border-radius:12px;margin:10px 0;background:#fff;
+  }
+  .table td{border:0;padding:0}
+  .table td::before{
+    content:attr(data-label) " — ";
+    font-weight:700;color:var(--muted);display:inline;
+  }
+  .col-actions,.row-actions{width:100%}
+}
+
+/* ---------- Small helpers ---------- */
+a{color:var(--brand-700);text-decoration:none}
+a:hover{text-decoration:underline}
