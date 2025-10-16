@@ -1,1 +1,1 @@
-# fitcrm
+FitCRM clean build. Non-binary removed; example placeholders removed. HTML+CSS only.

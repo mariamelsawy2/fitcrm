@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitCRM — New Client</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">FitCRM</h1>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a class="nav-link active" href="index.html">New Client</a></li>
+          <li><a class="nav-link" href="clients.html">Client List</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card form-card" aria-labelledby="new-client-title">
+      <header class="section-header">
+        <h2 id="new-client-title">New Client Form</h2>
+      </header>
+
+      <form class="grid-form" action="#" method="post" novalidate>
+        <fieldset class="grid">
+          <legend class="sr-only">Client Details</legend>
+
+          <div class="form-field">
+            <label for="fullName">Full Name <span aria-hidden="true" class="req">*</span></label>
+            <input id="fullName" name="fullName" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label for="age">Age <span aria-hidden="true" class="req">*</span></label>
+            <input id="age" name="age" type="number" inputmode="numeric" min="1" max="120" required />
+          </div>
+
+          <div class="form-field">
+            <label for="gender">Gender <span aria-hidden="true" class="req">*</span></label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select…</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email <span aria-hidden="true" class="req">*</span></label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone <span aria-hidden="true" class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+
+          <div class="form-field">
+            <label for="goal">Fitness Goal <span aria-hidden="true" class="req">*</span></label>
+            <select id="goal" name="goal" required>
+              <option value="" disabled selected>Select…</option>
+              <option>Weight Loss</option>
+              <option>Muscle Gain</option>
+              <option>General Fitness</option>
+              <option>Other (enter below)</option>
+            </select>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="goalText">If “Other”, describe goal</label>
+            <input id="goalText" name="goalText" type="text" />
+          </div>
+
+          <div class="form-field">
+            <label for="startDate">Membership Start Date <span aria-hidden="true" class="req">*</span></label>
+            <input id="startDate" name="startDate" type="date" required />
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary" aria-disabled="true">Add Client</button>
+          <p class="hint">This button is a visual placeholder only (no action).</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="clients.html" class="text-link">View Client List</a></p>
+    </div>
+  </footer>
+</body>
+</html>

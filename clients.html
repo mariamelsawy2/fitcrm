@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitCRM — Client List</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">FitCRM</h1>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a class="nav-link" href="index.html">New Client</a></li>
+          <li><a class="nav-link active" href="clients.html">Client List</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="client-list-title">
+      <header class="section-header">
+        <h2 id="client-list-title">Client List</h2>
+      </header>
+
+      <div class="toolbar">
+        <label for="search" class="sr-only">Search by name</label>
+        <input id="search" type="search" />
+      </div>
+
+      <div class="table-wrap" role="region" aria-label="Clients Table" tabindex="0">
+        <table class="table clients-table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Fitness Goal</th>
+              <th scope="col">Start Date</th>
+              <th scope="col" class="col-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Name">Sara Ahmed</td>
+              <td data-label="Email"><a href="mailto:sara.ahmed@example.com">sara.ahmed@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201012345678">+20 10 1234 5678</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Weight Loss</span></td>
+              <td data-label="Start Date">2025-09-01</td>
+              <td class="row-actions">
+                <button class="btn btn-ghost" aria-disabled="true">Edit</button>
+                <button class="btn btn-danger-ghost" aria-disabled="true">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Name">Omar Hassan</td>
+              <td data-label="Email"><a href="mailto:omar.hassan@example.com">omar.hassan@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201223456789">+20 12 2345 6789</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Muscle Gain</span></td>
+              <td data-label="Start Date">2025-08-15</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Mariam Nabil</td>
+              <td data-label="Email"><a href="mailto:mariam.nabil@example.com">mariam.nabil@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201345678901">+20 13 4567 8901</a></td>
+              <td data-label="Fitness Goal"><span class="badge">General Fitness</span></td>
+              <td data-label="Start Date">2025-07-10</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Youssef Ali</td>
+              <td data-label="Email"><a href="mailto:youssef.ali@example.com">youssef.ali@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201555666777">+20 15 5566 6777</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Muscle Gain</span></td>
+              <td data-label="Start Date">2025-09-20</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Laila Samir</td>
+              <td data-label="Email"><a href="mailto:laila.samir@example.com">laila.samir@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201777888999">+20 17 7788 8999</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Weight Loss</span></td>
+              <td data-label="Start Date">2025-06-01</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Karim Fathy</td>
+              <td data-label="Email"><a href="mailto:karim.fathy@example.com">karim.fathy@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201888999000">+20 18 8899 9000</a></td>
+              <td data-label="Fitness Goal"><span class="badge">General Fitness</span></td>
+              <td data-label="Start Date">2025-05-22</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Noura Adel</td>
+              <td data-label="Email"><a href="mailto:noura.adel@example.com">noura.adel@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201909080706">+20 19 0908 0706</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Weight Loss</span></td>
+              <td data-label="Start Date">2025-04-30</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Hassan Mostafa</td>
+              <td data-label="Email"><a href="mailto:hassan.mostafa@example.com">hassan.mostafa@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201606050403">+20 16 0605 0403</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Muscle Gain</span></td>
+              <td data-label="Start Date">2025-03-18</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Dina Farouk</td>
+              <td data-label="Email"><a href="mailto:dina.farouk@example.com">dina.farouk@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201303020100">+20 13 0302 0100</a></td>
+              <td data-label="Fitness Goal"><span class="badge">General Fitness</span></td>
+              <td data-label="Start Date">2025-02-05</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Ziad Talaat</td>
+              <td data-label="Email"><a href="mailto:ziad.talaat@example.com">ziad.talaat@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201222333444">+20 12 2233 3444</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Muscle Gain</span></td>
+              <td data-label="Start Date">2025-01-12</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+            <tr>
+              <td data-label="Name">Farida Yasser</td>
+              <td data-label="Email"><a href="mailto:farida.yasser@example.com">farida.yasser@example.com</a></td>
+              <td data-label="Phone"><a href="tel:+201444555666">+20 14 4455 5666</a></td>
+              <td data-label="Fitness Goal"><span class="badge">Weight Loss</span></td>
+              <td data-label="Start Date">2024-12-01</td>
+              <td class="row-actions"><button class="btn btn-ghost" aria-disabled="true">Edit</button><button class="btn btn-danger-ghost" aria-disabled="true">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="index.html" class="text-link">Add New Client</a></p>
+    </div>
+  </footer>
+</body>
+</html>
